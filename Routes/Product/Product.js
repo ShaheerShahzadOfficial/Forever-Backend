@@ -1,6 +1,6 @@
-import express from "express";
+const express = require("express");
 const ProductRoute = express.Router();
-import {
+const {
   createProduct,
   CreateProductReview,
   deleteProduct,
@@ -10,11 +10,11 @@ import {
   getProductReviews,
   oneProductDetail,
   updateProduct
-} from "../../Controller/productController.mjs";
-import {
+} = require("../../Controller/productController.js");
+const {
   AuthenticatedUserRole,
   checkToken
-} from "../../middleware/Auth/auth.mjs";
+} = require("../../middleware/Auth/auth.js");
 
 ProductRoute.route("/getProduct").get(getAllProduct);
 
@@ -50,4 +50,4 @@ ProductRoute.route("/getAllReviews").get(getProductReviews);
 
 ProductRoute.route("/deleteReview").delete(checkToken, DeleteProductReview);
 
-export default ProductRoute;
+module.exports = ProductRoute;

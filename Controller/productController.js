@@ -1,8 +1,8 @@
 
-import Product from '../model/ProductModel.mjs'
-import ErrorHandler from '../utils/errorhandler.mjs'
-import ApiFeature from '../utils/apiFeature.mjs'
-import cloudinary from 'cloudinary'
+const Product = require( '../model/ProductModel.js')
+const ErrorHandler = require( '../utils/errorhandler.js')
+const ApiFeature = require( '../utils/apiFeature.js')
+const cloudinary = require("cloudinary");
 
 //// CREATE NEW PRODUCT  --ADMIN
 
@@ -237,7 +237,7 @@ const DeleteProductReview = async (req, res, next) => {
   })
 }
 
-export {
+module.exports = {
   getAllProduct,
   getAllProductAdmin,
   createProduct,

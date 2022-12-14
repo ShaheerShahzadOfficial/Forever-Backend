@@ -1,8 +1,8 @@
-import http from "http";
-import app from "./app.mjs";
-import dotenv from "dotenv";
-import DBConnection from "./config/database/database.mjs";
-import cloudinary from "cloudinary";
+const http = require("http");
+const app = require("./app.js");
+const dotenv = require("dotenv");
+const DBConnection = require("./config/database/database.js");
+const cloudinary = require("cloudinary");
 const Server = http.createServer(app);
 
 // config
